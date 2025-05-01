@@ -1,0 +1,888 @@
+{
+  "terminal.integrated.defaultProfile.linux": "fish",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "/usr/bin/zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    },
+    "fish2": {
+      "path": "/usr/bin/fish"
+    }
+  },
+  "terminal.integrated.env.linux": {
+    "PATH": "${env:PATH}:~/.local/bin"
+  },
+  "terminal.external.linuxExec": "/usr/bin/alacritty",
+  "editor.tokenColorCustomizations": {
+    "[One Dark Pro]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "support.class.component.open.jsx",
+            "support.class.component.close.jsx",
+            "entity.name.function.js"
+          ],
+          "settings": {
+            "foreground": "#61afef"
+          }
+        },
+        {
+          "scope": [
+            "variable.other.constant.object.js",
+            "punctuation.section.embedded.begin.jsx",
+            "punctuation.section.embedded.end.jsx"
+          ],
+          "settings": {
+            "foreground": "#abb2bf"
+          }
+        },
+        {
+          "scope": ["punctuation.definition.tag.jsx"],
+          "settings": {
+            "foreground": "#5c6370"
+          }
+        },
+        {
+          "scope": [
+            "variable.other.readwrite.js",
+            "variable.other.property.js",
+            "variable.parameter",
+            "variable.other.object.js"
+          ],
+          "settings": {
+            "foreground": "#56b6c2"
+          }
+        },
+        {
+          "scope": ["entity.other.attribute-name.jsx"],
+          "settings": {
+            "foreground": "#e5c07b"
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.assignment.js",
+            "keyword.operator.assignment.jsx",
+            "string.unquoted.js",
+            "keyword.operator.typeof.js",
+            "meta.embedded.expression.js",
+            "constant.other.object.key.js",
+            "keyword.operator.logical.js"
+          ],
+          "settings": {
+            "foreground": "#c678dd"
+          }
+        },
+        {
+          "scope": ["variable.other.constant.object.js"],
+          "settings": {
+            "foreground": "#e06c75"
+          }
+        }
+      ]
+    }
+  },
+  "workbench.colorCustomizations": {
+    "[Default Dark+]": {
+      "statusBar.background": "#2E2E2E",
+      "statusBar.foreground": "#8C8C8C",
+      "statusBarItem.remoteBackground": "#2E2E2E",
+      "statusBarItem.remoteForeground": "#8C8C8C",
+      "activityBar.background": "#2E2E2E",
+      "tab.inactiveBackground": "#2E2E2E"
+    },
+    "[One Dark Pro]": {
+      "editor.background": "#1e2127",
+      "terminal.foreground": "#abb2bf",
+      "terminal.ansiBlack": "#1e2127",
+      "terminal.ansiBlue": "#61afef",
+      "terminal.ansiCyan": "#56b6c2",
+      "terminal.ansiGreen": "#98C379",
+      "terminal.ansiMagenta": "#c678dd",
+      "terminal.ansiRed": "#e06c75",
+      "terminal.ansiWhite": "#abb2bf",
+      "terminal.ansiYellow": "#d19a66",
+      "terminal.ansiBrightBlack": "#5c6370",
+      "terminal.ansiBrightBlue": "#61afef",
+      "terminal.ansiBrightCyan": "#56b6c2",
+      "terminal.ansiBrightGreen": "#98c379",
+      "terminal.ansiBrightMagenta": "#c678dd",
+      "terminal.ansiBrightRed": "#e06c75",
+      "terminal.ansiBrightWhite": "#ffffff",
+      "terminal.ansiBrightYellow": "#d19a66"
+    }
+  },
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.message.badbox.show": false,
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "lualatex",
+      "command": "lualatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": ["%DOCFILE%"]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "lualatex -> biber -> lualatex",
+      "tools": ["lualatex", "biber", "lualatex", "lualatex"]
+    },
+    {
+      "name": "latexmk 🔃",
+      "tools": ["latexmk"]
+    },
+    {
+      "name": "latexmk (latexmkrc)",
+      "tools": ["latexmk_rconly"]
+    },
+    {
+      "name": "latexmk (lualatex)",
+      "tools": ["lualatexmk"]
+    },
+    {
+      "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+    },
+    {
+      "name": "Compile Rnw files",
+      "tools": ["rnw2tex", "latexmk"]
+    },
+    {
+      "name": "Compile Jnw files",
+      "tools": ["jnw2tex", "latexmk"]
+    },
+    {
+      "name": "tectonic",
+      "tools": ["tectonic"]
+    }
+  ],
+  "settingsSync.ignoredSettings": ["remote.SSH.remotePlatform"],
+  "settingsSync.ignoredExtensions": [
+    "github.copilot",
+    "dbaeumer.vscode-eslint",
+    "ms-dotnettools.csharp",
+    "ms-toolsai.jupyter-keymap",
+    "ms-toolsai.jupyter-renderers",
+    "njpwerner.autodocstring",
+    "svelte.svelte-vscode",
+    "tomoki1207.pdf",
+    "formulahendry.code-runner",
+    "ms-vscode.cmake-tools",
+    "twxs.cmake",
+    "cschlosser.doxdocgen",
+    "mark-wiemer.vscode-autohotkey-plus-plus",
+    "ms-vscode.cpptools-extension-pack",
+    "ms-vscode.cpptools",
+    "denoland.vscode-deno",
+    "golang.go",
+    "eriklynd.json-tools",
+    "ms-python.vscode-pylance",
+    "ms-python.python",
+    "rust-lang.rust-analyzer",
+    "rbuckton.tsserver-live-reload"
+  ],
+  "oneDarkPro.editorTheme": "One Dark Pro",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "python.condaPath": "$HOME/.miniconda/bin/conda",
+  "python.formatting.provider": "black",
+  "python.languageServer": "Pylance",
+  "python.terminal.activateEnvironment": false,
+  "code-runner.executorMap": {
+    "python": "$pythonPath $fileName",
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+  },
+  "git.autofetch": true,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.currentLine.enabled": false,
+  "indentRainbow.ignoreErrorLanguages": ["*"],
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "remote.SSH.remotePlatform": {
+    "saga.sigma2.no": "linux"
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.cursorBlinking": "solid",
+  "editor.fontFamily": "Consolas",
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.horizontal": "auto",
+  "editor.scrollbar.vertical": "auto",
+  "editor.snippetSuggestions": "bottom",
+  "editor.suggestSelection": "first",
+  "emmet.showSuggestionsAsSnippets": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "material-icon-theme.showWelcomeMessage": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.fontFamily": "monospace",
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 20,
+  "workbench.editor.revealIfOpen": true,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.list.automaticKeyboardNavigation": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "material-icon-theme.hidesExplorerArrows": true,
+  "workbench.tree.renderIndentGuides": "always",
+  "editor.accessibilitySupport": "off",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "dance.menus": {
+    "object": {
+      "title": "Select object...",
+      "items": {
+        "w": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "[\\p{L}_\\d]+(?<after>[^\\S\\n]+)"
+            }
+          ],
+          "text": "word"
+        },
+        "W": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "[\\S]+(?<after>[^\\S\\n]+)"
+            }
+          ],
+          "text": "WORD"
+        },
+        "s": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#predefined=sentence)"
+            }
+          ],
+          "text": "sentence"
+        },
+        "p": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#predefined=paragraph)"
+            }
+          ],
+          "text": "paragraph"
+        },
+        " ": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?<before>[\\s]+)[^\\S\\n]+(?<after>[\\s]+)"
+            }
+          ],
+          "text": "whitespaces"
+        },
+        "i": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#predefined=indent)"
+            }
+          ],
+          "text": "indent"
+        },
+        "()": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "\\((?#inner)\\)"
+            }
+          ],
+          "text": "parenthesis block"
+        },
+        "{}": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "\\{(?#inner)\\}"
+            }
+          ],
+          "text": "braces block"
+        },
+        "[]": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "\\[(?#inner)\\]"
+            }
+          ],
+          "text": "brackets block"
+        },
+        "<>": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "<(?#inner)>"
+            }
+          ],
+          "text": "angle block"
+        },
+        "\"": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#noescape)\"(?#inner)(?#noescape)\""
+            }
+          ],
+          "text": "double quote string"
+        },
+        "'": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#noescape)'(?#inner)(?#noescape)'"
+            }
+          ],
+          "text": "single quote string"
+        },
+        "`": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#noescape)`(?#inner)(?#noescape)`"
+            }
+          ],
+          "text": "grave quote string"
+        },
+        "c": {
+          "command": "dance.seek.object",
+          "text": "custom object desc"
+        }
+      }
+    },
+    "match": {
+      "title": "Match...",
+      "items": {
+        "m": {
+          "text": "Goto matching bracket",
+          "command": "dance.seek.enclosing"
+        },
+        "s": {
+          "text": "Surround add",
+          "command": "dance.match.surround"
+        },
+        "r": {
+          "text": "Surround replace",
+          "command": "dance.match.surroundreplace"
+        },
+        "d": {
+          "text": "Surround delete",
+          "command": "dance.match.surrounddelete"
+        },
+        "a": {
+          "text": "Select around object",
+          "command": "dance.seek.askObject"
+        },
+        "i": {
+          "text": "Select inside object",
+          "command": "dance.seek.askObject.inner"
+        }
+      }
+    },
+    "space": {
+      "title": "Space",
+      "items": {
+        "f": {
+          "text": "Open file picker",
+          "command": "workbench.action.quickOpen"
+        },
+        "F": {
+          "text": "Open file picker",
+          "command": "workbench.action.quickOpen"
+        },
+        "b": {
+          "text": "Open buffer picker",
+          "command": "workbench.action.showAllEditors"
+        },
+        "s": {
+          "text": "Open symbol picker",
+          "command": "workbench.action.gotoSymbol"
+        },
+        "a": {
+          "text": "Perform code action",
+          "command": "editor.action.quickFix"
+        },
+        "d": {
+          "text": "Start debug",
+          "command": "workbench.action.debug.start"
+        },
+        "w": {
+          "text": "Window",
+          "command": "dance.window.windowMenu"
+        },
+        "y": {
+          "text": "Join and yank selections to clipboard",
+          "command": "dance.selections.saveText",
+          "args": [
+            {
+              "register": ""
+            }
+          ]
+        },
+        "p": {
+          "text": "Paste clipboard after selections",
+          "command": "dance.edit.insert",
+          "args": [
+            {
+              "handleNewLine": true,
+              "where": "end"
+            }
+          ]
+        },
+        "P​": {
+          "text": "Paste clipboard before selections",
+          "command": "dance.edit.insert",
+          "args": [
+            {
+              "handleNewLine": true,
+              "where": "start"
+            }
+          ]
+        },
+        "/": {
+          "text": "Global Search in workspace folder",
+          "command": "workbench.action.findInFiles"
+        },
+        "k": {
+          "text": "Show docs for item under cursor (hover)",
+          "command": "editor.action.showHover"
+        },
+        "r": {
+          "text": "Rename symbol",
+          "command": "editor.action.rename"
+        },
+        "c": {
+          "text": "Copilot",
+          "command": "dance.openMenu",
+          "args": [
+            {
+              "menu": "copilot"
+            }
+          ]
+        },
+        "x": {
+          "text": "Close buffer",
+          "command": "workbench.action.closeActiveEditor"
+        },
+        "?": {
+          "text": "Open command palette",
+          "command": "workbench.action.showCommands"
+        }
+      }
+    },
+    "goto": {
+      "title": "Go...",
+      "items": {
+        "g": {
+          "text": "to first line",
+          "command": "dance.select.lineStart",
+          "args": [
+            {
+              "count": 1
+            }
+          ]
+        },
+        "e": {
+          "text": "to last char of last line",
+          "command": "dance.select.lineEnd",
+          "args": [
+            {
+              "count": 2147483647
+            }
+          ]
+        },
+        "f": {
+          "text": "to file whose name is selected",
+          "command": "dance.selections.open"
+        },
+        "h": {
+          "text": "to line start",
+          "command": "dance.select.lineStart"
+        },
+        "l": {
+          "text": "to line end",
+          "command": "dance.select.lineEnd"
+        },
+        "s": {
+          "text": "to non-blank line start",
+          "command": "dance.select.lineStart",
+          "args": [
+            {
+              "skipBlank": true
+            }
+          ]
+        },
+        "t": {
+          "text": "to first displayed line",
+          "command": "dance.select.firstVisibleLine"
+        },
+        "c": {
+          "text": "to middle displayed line",
+          "command": "dance.select.middleVisibleLine"
+        },
+        "b": {
+          "text": "to last displayed line",
+          "command": "dance.select.lastVisibleLine"
+        },
+        "d": {
+          "text": "to definition",
+          "command": "editor.action.revealDefinition"
+        },
+        "y": {
+          "text": "to type definition",
+          "command": "editor.action.goToTypeDefinition"
+        },
+        "r": {
+          "text": "to references",
+          "command": "editor.action.goToReferences"
+        },
+        "i": {
+          "text": "to implementation",
+          "command": "editor.action.goToImplementation"
+        },
+        "a": {
+          "text": "to last accessed buffer",
+          "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup"
+        },
+        "n": {
+          "text": "to next buffer",
+          "command": "workbench.action.nextEditor"
+        },
+        "p": {
+          "text": "to previous buffer",
+          "command": "workbench.action.previousEditor"
+        },
+        ".": {
+          "text": "to last buffer modification position",
+          "command": "dance.selections.restore",
+          "args": [
+            {
+              "register": " insert"
+            }
+          ]
+        }
+      }
+    },
+    "window": {
+      "title": "Window",
+      "items": {
+        "w": {
+          "text": "Goto next window",
+          "command": "workbench.action.nextEditor"
+        },
+        "s": {
+          "text": "Horizontal bottom split",
+          "command": "workbench.action.splitEditorDown"
+        },
+        "v": {
+          "text": "Vertical right split",
+          "command": "workbench.action.splitEditor"
+        },
+        "t": {
+          "text": "Transpose splits",
+          "command": "workbench.action.toggleEditorGroupLayout"
+        },
+        "q": {
+          "text": "Close window",
+          "command": "workbench.action.closeActiveEditor"
+        },
+        "o": {
+          "text": "Close all other windows (Current window only)",
+          "command": "workbench.action.closeOtherEditors"
+        },
+        "h": {
+          "text": "Jump to the split on the left",
+          "command": "workbench.action.focusLeftGroup"
+        },
+        "j": {
+          "text": "Jump to the split below",
+          "command": "workbench.action.focusBelowGroup"
+        },
+        "k": {
+          "text": "Jump to the split above",
+          "command": "workbench.action.focusAboveGroup"
+        },
+        "l": {
+          "text": "Jump to the split to the right",
+          "command": "workbench.action.focusRightGroup"
+        },
+        "H": {
+          "text": "Swap with the split to the left",
+          "command": "workbench.action.moveActiveEditorGroupLeft"
+        },
+        "J": {
+          "text": "Swap with the split below",
+          "command": "workbench.action.moveActiveEditorGroupDown"
+        },
+        "K": {
+          "text": "Swap with the split above",
+          "command": "workbench.action.moveActiveEditorGroupUp"
+        },
+        "L": {
+          "text": "Swap with the split to the right",
+          "command": "workbench.action.moveActiveEditorGroupRight"
+        }
+      }
+    },
+    "view": {
+      "title": "View",
+      "items": {
+        "zc": {
+          "text": "center cursor vertically",
+          "command": "dance.view.line",
+          "args": [
+            {
+              "at": "center"
+            }
+          ]
+        },
+        "t": {
+          "text": "cursor on top",
+          "command": "dance.view.line",
+          "args": [
+            {
+              "at": "top"
+            }
+          ]
+        },
+        "b": {
+          "text": "cursor on bottom",
+          "command": "dance.view.line",
+          "args": [
+            {
+              "at": "bottom"
+            }
+          ]
+        },
+        "j": {
+          "text": "scroll down",
+          "command": "editorScroll",
+          "args": [
+            {
+              "to": "down",
+              "by": "line",
+              "revealCursor": true
+            }
+          ]
+        },
+        "k": {
+          "text": "scroll up",
+          "command": "editorScroll",
+          "args": [
+            {
+              "to": "up",
+              "by": "line",
+              "revealCursor": true
+            }
+          ]
+        }
+      }
+    },
+    "copilot": {
+      "title": "Copilot",
+      "items": {
+        "e": {
+          "text": "Copilot explain this",
+          "command": "github.copilot.interactiveEditor.explain"
+        },
+        "c": {
+          "text": "Clear chat",
+          "command": "workbench.action.chat.clear"
+        },
+        "f": {
+          "text": "Focus chat",
+          "command": "workbench.action.chat.focusInput"
+        }
+      }
+    },
+    "command": {
+      "title": "Command",
+      "items": {
+        "w": {
+          "text": "Write",
+          "command": "workbench.action.files.save"
+        },
+        "c": {
+          "text": "Copilot",
+          "command": "dance.openMenu",
+          "args": [
+            {
+              "menu": "copilot"
+            }
+          ]
+        },
+        "x": {
+          "text": "Close buffer",
+          "command": "workbench.action.closeWindow"
+        }
+      }
+    }
+  },
+  "dance.modes": {
+    "": {
+      "hiddenSelectionsIndicatorsDecoration": {
+        "after": {
+          "color": "$list.warningForeground"
+        },
+        "backgroundColor": "$inputValidation.warningBackground",
+        "borderColor": "$inputValidation.warningBorder",
+        "borderStyle": "solid",
+        "borderWidth": "1px",
+        "isWholeLine": true
+      }
+    },
+    "input": {
+      "cursorStyle": "underline-thin"
+    },
+    "insert": {
+      "onLeaveMode": [
+        [
+          ".selections.save",
+          {
+            "register": " insert"
+          }
+        ]
+      ]
+    },
+    "visual": {
+      "lineNumbers": "relative",
+      "cursorStyle": "underline",
+      "selectionBehavior": "character",
+      "onEnterMode": [
+        [
+          ".selections.restore",
+          {
+            "register": " ^",
+            "try": true
+          }
+        ]
+      ],
+      "onLeaveMode": [
+        [
+          ".selections.save",
+          {
+            "register": " ^",
+            "style": {
+              "borderColor": "$editor.selectionBackground",
+              "borderStyle": "solid",
+              "borderWidth": "2px",
+              "borderRadius": "1px"
+            },
+            "until": [
+              [
+                "mode-did-change",
+                {
+                  "include": "normal"
+                }
+              ],
+              [
+                "mode-did-change",
+                {
+                  "include": "visual"
+                }
+              ],
+              ["selections-did-change"]
+            ]
+          }
+        ]
+      ]
+    },
+    "normal": {
+      "lineNumbers": "relative",
+      "cursorStyle": "block",
+      "selectionBehavior": "character",
+      "onEnterMode": [
+        [
+          ".selections.restore",
+          {
+            "register": " ^",
+            "try": true
+          }
+        ]
+      ],
+      "onLeaveMode": [
+        [
+          ".selections.save",
+          {
+            "register": " ^",
+            "style": {
+              "borderColor": "$editor.selectionBackground",
+              "borderStyle": "solid",
+              "borderWidth": "2px",
+              "borderRadius": "1px"
+            },
+            "until": [
+              [
+                "mode-did-change",
+                {
+                  "include": "normal"
+                }
+              ],
+              [
+                "mode-did-change",
+                {
+                  "include": "visual"
+                }
+              ],
+              ["selections-did-change"]
+            ]
+          }
+        ]
+      ]
+    }
+  },
+  "editor.stickyScroll.enabled": true,
+  "editor.cursorSurroundingLines": 10,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "redhat.telemetry.enabled": false,
+  "syncSettings.resources": ["keybindings", "settings", "snippets"]
+}
