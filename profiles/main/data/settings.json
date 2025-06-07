@@ -884,5 +884,7 @@
   "editor.cursorSurroundingLines": 10,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "redhat.telemetry.enabled": false,
-  "syncSettings.resources": ["keybindings", "settings", "snippets"]
+  "syncSettings.resources": ["keybindings", "settings", "snippets"],
+  "telemetry.telemetryLevel": "off",
+  "telemetry.feedback.enabled": false
 }

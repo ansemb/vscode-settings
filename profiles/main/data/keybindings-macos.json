@@ -142,11 +142,13 @@
   },
   {
     "key": "cmd+c",
-    "command": "-editor.action.clipboardCopyAction"
+    "command": "-editor.action.clipboardCopyAction",
+    "when": "!inChatInput"
   },
   {
     "key": "cmd+v",
-    "command": "-editor.action.clipboardPasteAction"
+    "command": "-editor.action.clipboardPasteAction",
+    "when": "!inChatInput"
   },
   {
     "key": "alt+d",
@@ -165,14 +167,6 @@
       "menu": "command"
     },
     "when": "editorTextFocus && dance.mode == 'normal'"
-  },
-  {
-    "key": "cmd+;",
-    "command": "dance.openMenu",
-    "args": {
-      "menu": "command"
-    },
-    "when": "!editorTextFocus"
   },
   {
     "key": "shift+;",
@@ -209,7 +203,7 @@
     "args": {
       "commands": [
         "dance.selections.reduce",
-        "dance.selections.clear.secondary",
+        "dance.selections.clear.secondary"
       ]
     },
     "when": "editorTextFocus && dance.mode == 'normal'"
@@ -243,10 +237,7 @@
     "key": "y",
     "command": "runCommands",
     "args": {
-      "commands": [
-        "dance.selections.saveText",
-        "dance.modes.set.normal"
-      ]
+      "commands": ["dance.selections.saveText", "dance.modes.set.normal"]
     },
     "when": "editorTextFocus && dance.mode == 'visual'"
   },
@@ -262,11 +253,11 @@
   },
   {
     "key": "alt+l",
-    "command": "workbench.action.nextEditor",
+    "command": "workbench.action.nextEditor"
   },
   {
     "key": "alt+h",
-    "command": "workbench.action.previousEditor",
+    "command": "workbench.action.previousEditor"
   },
   {
     "key": "shift+cmd+o",
@@ -423,4 +414,12 @@
     "command": "-workbench.action.closeWindow",
     "when": "!editorIsOpen && !multipleEditorGroups"
   },
+  {
+    "key": "shift+cmd+;",
+    "command": "github.copilot.chat.attachSelection"
+  },
+  {
+    "key": "cmd+;",
+    "command": "workbench.action.chat.openInSidebar"
+  }
 ]
