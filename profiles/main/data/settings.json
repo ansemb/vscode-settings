@@ -246,22 +246,21 @@
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.fontFamily": "monospace",
   "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.value": 20,
+  "workbench.editor.limit.value": 30,
   "workbench.editor.revealIfOpen": true,
   "workbench.editor.showTabs": "multiple",
-  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.iconTheme": "adaptivecard",
   "workbench.list.automaticKeyboardNavigation": false,
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Catppuccin Mocha",
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -509,6 +508,15 @@
             }
           ]
         },
+        "l": {
+          "text": "Copilot",
+          "command": "dance.openMenu",
+          "args": [
+            {
+              "menu": "copilot"
+            }
+          ]
+        },
         "x": {
           "text": "Close buffer",
           "command": "workbench.action.closeActiveEditor"
@@ -734,13 +742,29 @@
           "text": "Copilot explain this",
           "command": "github.copilot.interactiveEditor.explain"
         },
-        "c": {
-          "text": "Clear chat",
-          "command": "workbench.action.chat.clear"
+        "k": {
+          "text": "Chat: Add selection to chat",
+          "command": "workbench.action.chat.attachSelection"
         },
+        "l": {
+          "text": "Chat: Add file to chat",
+          "command": "workbench.action.chat.attachFile"
+        },
+        "n": {
+          "text": "Chat: New chat",
+          "command": "workbench.action.chat.newChat"
+        },
+        "h": {
+          "text": "Chat: Show history",
+          "command": "workbench.action.chat.history"
+        },
+        // "c": {
+        //   "text": "Clear chat",
+        //   "command": "workbench.action.chat.clear"
+        // },
         "f": {
           "text": "Focus chat",
-          "command": "workbench.action.chat.focusInput"
+          "command": "workbench.action.chat.openAgent"
         }
       }
     },
@@ -882,9 +906,40 @@
   },
   "editor.stickyScroll.enabled": true,
   "editor.cursorSurroundingLines": 10,
-  "editor.inlayHints.enabled": "offUnlessPressed",
   "redhat.telemetry.enabled": false,
   "syncSettings.resources": ["keybindings", "settings", "snippets"],
+  "terminal.integrated.inheritEnv": false,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "gitlens.plusFeatures.enabled": false,
   "telemetry.telemetryLevel": "off",
-  "telemetry.feedback.enabled": false
+  "typescript.tsserver.pluginPaths": ["tsserver-telemetry-plugin"],
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "chat.tools.terminal.autoApprove": {
+    "rm": false,
+    "rmdir": false,
+    "del": false,
+    "kill": false,
+    "curl": false,
+    "wget": false,
+    "eval": false,
+    "chmod": false,
+    "chown": false,
+    "/^Remove-Item\\b/i": false,
+    "/^yarn\\b.*\\|\\s*tee\\b.*$/": true,
+    "/^yarn\\b.*lerna\\b.*run\\b.*prepare\\b.*\\|\\s*tee\\b.*$/": true,
+    "/^bash\\b.*-lc\\s+\\\"(?:[^\\\"]*?;\\s*)?yarn\\b.*lerna\\b.*run\\b.*prepare\\b.*\\|\\s*tee\\b.*\\\"$/": true,
+    "yarn": true,
+    "pnpm": true,
+    "cargo": true,
+    "cd": true,
+    "tee": true
+  }
 }
