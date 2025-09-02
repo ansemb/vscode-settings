@@ -142,13 +142,16 @@
   },
   {
     "key": "cmd+c",
-    "command": "-editor.action.clipboardCopyAction",
-    "when": "!inChatInput"
+    "command": "-editor.action.clipboardCopyAction"
   },
   {
     "key": "cmd+v",
-    "command": "-editor.action.clipboardPasteAction",
-    "when": "!inChatInput"
+    "command": "-editor.action.clipboardPasteAction"
+  },
+  {
+    "key": "cmd+v",
+    "command": "editor.action.clipboardPasteAction",
+    "when": "!editorTextFocus"
   },
   {
     "key": "alt+d",
@@ -167,6 +170,14 @@
       "menu": "command"
     },
     "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
+    "key": "cmd+;",
+    "command": "dance.openMenu",
+    "args": {
+      "menu": "command"
+    },
+    "when": "!editorTextFocus"
   },
   {
     "key": "shift+;",
@@ -415,11 +426,12 @@
     "when": "!editorIsOpen && !multipleEditorGroups"
   },
   {
-    "key": "shift+cmd+;",
-    "command": "github.copilot.chat.attachSelection"
+    "key": "shift+cmd+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
   },
   {
-    "key": "cmd+;",
-    "command": "workbench.action.chat.openInSidebar"
+    "key": "shift+cmd+k",
+    "command": "github.copilot.chat.attachSelection"
   }
 ]
