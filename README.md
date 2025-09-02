@@ -18,5 +18,5 @@ profile: main
 repository:
   type: git
   branch: main
-  url: https://ansemb:<PAT_TOKEN>@gitlab.com/ansemb/vscode-settings.git
+  url: https://ansemb:<PAT_TOKEN>@github.com/ansemb/vscode-settings.git
 ```
