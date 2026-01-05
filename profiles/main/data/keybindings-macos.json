@@ -263,11 +263,11 @@
     "when": "editorTextFocus && dance.mode == 'normal'"
   },
   {
-    "key": "alt+l",
+    "key": "cmd+alt+l",
     "command": "workbench.action.nextEditor"
   },
   {
-    "key": "alt+h",
+    "key": "cmd+alt+h",
     "command": "workbench.action.previousEditor"
   },
   {
