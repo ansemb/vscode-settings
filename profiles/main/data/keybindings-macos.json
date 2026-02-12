@@ -91,6 +91,108 @@
     "command": "explorer.newFolder",
     "when": "filesExplorerFocus && !inputFocus",
   },
+  // --- Source Control navigation ---
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && !inputFocus",
+  },
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && !inputFocus",
+  },
+  {
+    "key": "l",
+    "command": "list.select",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && !inputFocus",
+  },
+  {
+    "key": "h",
+    "command": "list.collapse",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && !inputFocus",
+  },
+  // SCM tree → commit message input (i or cmd+k = "up")
+  {
+    "key": "i",
+    "command": "workbench.scm.action.focusNextInput",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && !inputFocus",
+  },
+  {
+    "key": "cmd+k",
+    "command": "workbench.scm.action.focusNextInput",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && !inputFocus",
+  },
+  // SCM commit message input → tree (escape or cmd+j = "down")
+  {
+    "key": "escape",
+    "command": "workbench.scm.action.focusNextResourceGroup",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && inputFocus",
+  },
+  {
+    "key": "cmd+j",
+    "command": "workbench.scm.action.focusNextResourceGroup",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && inputFocus",
+  },
+  // --- Search navigation ---
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "searchViewletFocus && !inputFocus",
+  },
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "searchViewletFocus && !inputFocus",
+  },
+  {
+    "key": "l",
+    "command": "search.action.openResult",
+    "when": "searchViewletFocus && !inputFocus",
+  },
+  {
+    "key": "h",
+    "command": "list.collapse",
+    "when": "searchViewletFocus && !inputFocus",
+  },
+  // Search results → search input (i or cmd+k or / = "up")
+  {
+    "key": "i",
+    "command": "search.action.focusSearchFromResults",
+    "when": "searchViewletVisible && hasSearchResult && listFocus",
+  },
+  {
+    "key": "/",
+    "command": "search.action.focusSearchFromResults",
+    "when": "searchViewletVisible && hasSearchResult && listFocus",
+  },
+  {
+    "key": "cmd+k",
+    "command": "search.action.focusSearchFromResults",
+    "when": "searchViewletVisible && hasSearchResult && listFocus",
+  },
+  // Toggle replace in search view
+  {
+    "key": "shift+cmd+h",
+    "command": "closeReplaceInFilesWidget",
+    "when": "searchViewletFocus && replaceActive",
+  },
+  {
+    "key": "shift+cmd+h",
+    "command": "workbench.action.replaceInFiles",
+    "when": "searchViewletFocus && !replaceActive",
+  },
+  // Search input → results list (escape or cmd+j = "down")
+  {
+    "key": "escape",
+    "command": "search.action.focusSearchList",
+    "when": "searchViewletFocus && inputFocus",
+  },
+  {
+    "key": "cmd+j",
+    "command": "search.action.focusSearchList",
+    "when": "searchViewletFocus && inputFocus",
+  },
   {
     "key": "shift+;",
     "command": "insertPrevSuggestion",
@@ -302,7 +404,10 @@
     "key": "y",
     "command": "runCommands",
     "args": {
-      "commands": ["dance.selections.saveText", "dance.modes.set.normal"],
+      "commands": [
+        "dance.selections.saveText",
+        "dance.modes.set.normal"
+      ],
     },
     "when": "editorTextFocus && dance.mode == 'visual'",
   },

@@ -544,6 +544,15 @@
             },
           ],
         },
+        "v": {
+          "text": "Views",
+          "command": "dance.openMenu",
+          "args": [
+            {
+              "menu": "views",
+            },
+          ],
+        },
         "c": {
           "text": "Copilot",
           "command": "dance.openMenu",
@@ -827,6 +836,39 @@
         "h": {
           "text": "Hide terminal",
           "command": "workbench.action.closePanel",
+        },
+      },
+    },
+    "views": {
+      "title": "Views",
+      "items": {
+        "e": {
+          "text": "Explorer",
+          "command": "workbench.view.explorer",
+        },
+        "f": {
+          "text": "Search",
+          "command": "workbench.view.search",
+        },
+        "g": {
+          "text": "Source Control",
+          "command": "workbench.view.scm",
+        },
+        "d": {
+          "text": "Debug",
+          "command": "workbench.view.debug",
+        },
+        "r": {
+          "text": "Remote Explorer",
+          "command": "workbench.view.remote",
+        },
+        "t": {
+          "text": "Testing",
+          "command": "workbench.view.extension.test",
+        },
+        "b": {
+          "text": "Bookmarks",
+          "command": "workbench.view.extension.bookmarks",
         },
       },
     },
