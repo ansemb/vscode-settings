@@ -535,6 +535,15 @@
           "text": "Rename symbol",
           "command": "editor.action.rename",
         },
+        "t": {
+          "text": "Terminal",
+          "command": "dance.openMenu",
+          "args": [
+            {
+              "menu": "terminal",
+            },
+          ],
+        },
         "c": {
           "text": "Copilot",
           "command": "dance.openMenu",
@@ -804,6 +813,23 @@
         },
       },
     },
+    "terminal": {
+      "title": "Terminal",
+      "items": {
+        "f": {
+          "text": "Focus terminal",
+          "command": "workbench.action.terminal.focus",
+        },
+        "s": {
+          "text": "Show terminal",
+          "command": "workbench.action.terminal.toggleTerminal",
+        },
+        "h": {
+          "text": "Hide terminal",
+          "command": "workbench.action.closePanel",
+        },
+      },
+    },
     "command": {
       "title": "Command",
       "items": {
@@ -1008,6 +1034,5 @@
       "approveResponse": true,
     },
   },
-  "chat.viewSessions.orientation": "stacked",
-  "chat.implicitContext.currentFile": true,
+  "chat.implicitContext.enabled": true,
 }
