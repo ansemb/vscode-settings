@@ -1049,15 +1049,35 @@
     "dotnet watch": true,
     "dotnet run": true,
   },
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "chat.agent.maxRequests": 50,
-  "gitlens.gitkraken.mcp.autoEnabled": false,
+  "chat.agent.maxRequests": 100,
   "chat.tools.urls.autoApprove": {
+    "https://github.com": {
+      "approveRequest": true,
+      "approveResponse": true,
+    },
+    "https://docs.rs": {
+      "approveRequest": true,
+      "approveResponse": true,
+    },
+    "https://raw.githubusercontent.com": {
+      "approveRequest": true,
+      "approveResponse": true,
+    },
     "https://learn.microsoft.com": {
       "approveRequest": true,
       "approveResponse": true,
     },
   },
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://schema.tauri.app": true,
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "gitlens.gitkraken.mcp.autoEnabled": false,
   "chat.implicitContext.enabled": {
     "panel": "always",
     "editor": "always",
