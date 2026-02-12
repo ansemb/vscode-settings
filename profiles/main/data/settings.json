@@ -470,9 +470,9 @@
           "text": "Open file picker",
           "command": "workbench.action.quickOpen",
         },
-        "F": {
-          "text": "Open file picker",
-          "command": "workbench.action.quickOpen",
+        "e": {
+          "text": "Open explorer in workspace root",
+          "command": "workbench.view.explorer",
         },
         "b": {
           "text": "Open buffer picker",
@@ -550,15 +550,6 @@
           "args": [
             {
               "menu": "views",
-            },
-          ],
-        },
-        "c": {
-          "text": "Copilot",
-          "command": "dance.openMenu",
-          "args": [
-            {
-              "menu": "copilot",
             },
           ],
         },
@@ -800,7 +791,7 @@
           "text": "Chat: Add selection to chat",
           "command": "workbench.action.chat.attachSelection",
         },
-        "l": {
+        "f": {
           "text": "Chat: Add file to chat",
           "command": "workbench.action.chat.attachFile",
         },
@@ -816,7 +807,7 @@
         //   "text": "Clear chat",
         //   "command": "workbench.action.chat.clear"
         // },
-        "f": {
+        "c": {
           "text": "Focus chat",
           "command": "workbench.action.chat.open",
         },
@@ -878,15 +869,6 @@
         "w": {
           "text": "Write",
           "command": "workbench.action.files.save",
-        },
-        "c": {
-          "text": "Copilot",
-          "command": "dance.openMenu",
-          "args": [
-            {
-              "menu": "copilot",
-            },
-          ],
         },
         "x": {
           "text": "Close buffer",
@@ -1072,9 +1054,12 @@
   "gitlens.gitkraken.mcp.autoEnabled": false,
   "chat.tools.urls.autoApprove": {
     "https://learn.microsoft.com": {
-      "approveRequest": false,
+      "approveRequest": true,
       "approveResponse": true,
     },
   },
-  "chat.implicitContext.enabled": true,
+  "chat.implicitContext.enabled": {
+    "panel": "always",
+    "editor": "always",
+  },
 }
