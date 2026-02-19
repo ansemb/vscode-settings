@@ -869,17 +869,39 @@
           "text": "Bookmarks",
           "command": "workbench.view.extension.bookmarks",
         },
-        "s": {
+        "h": {
           "text": "Toggle sidebar",
           "command": "workbench.action.toggleSidebarVisibility",
         },
-        "a": {
+        "l": {
           "text": "Toggle auxiliary bar",
           "command": "workbench.action.toggleAuxiliaryBar",
         },
-        "h": {
+        "j": {
           "text": "Toggle bottom panel",
           "command": "workbench.action.togglePanel",
+        },
+        "s": {
+          "text": "Show sidebars",
+          "command": "runCommands",
+          "args": {
+            "commands": [
+              "workbench.action.focusSideBar",
+              "workbench.action.focusAuxiliaryBar",
+              "workbench.action.focusActiveEditorGroup",
+            ],
+          },
+        },
+        "c": {
+          "text": "Close views",
+          "command": "runCommands",
+          "args": {
+            "commands": [
+              "workbench.action.closeSidebar",
+              "workbench.action.closePanel",
+              "workbench.action.closeAuxiliaryBar",
+            ],
+          },
         },
       },
     },
