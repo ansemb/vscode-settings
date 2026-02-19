@@ -399,7 +399,7 @@
   // ╔══════════════════════════════════════════════════════════════╗
   // ║  Copilot & Chat                                            ║
   // ╚══════════════════════════════════════════════════════════════╝
-  // cmd+space = open chat (in editor) / focus editor (outside editor)
+  // cmd+space = open chat (in editor) / space menu (terminal) / focus editor (elsewhere)
   {
     "key": "cmd+space",
     "command": "workbench.action.chat.open",
@@ -407,8 +407,24 @@
   },
   {
     "key": "cmd+space",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.focusActiveEditorGroup",
+        {
+          "command": "dance.openMenu",
+          "args": {
+            "menu": "space"
+          },
+        },
+      ],
+    },
+    "when": "terminalFocus",
+  },
+  {
+    "key": "cmd+space",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "!editorTextFocus",
+    "when": "!editorTextFocus && !terminalFocus",
   },
   // cmd+enter = submit chat (instead of enter)
   {
