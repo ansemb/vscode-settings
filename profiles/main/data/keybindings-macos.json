@@ -331,6 +331,193 @@
     "command": "workbench.action.terminal.focus",
     "when": "!terminalFocus",
   },
+  // shift+cmd+c = copy (universal), shift+cmd+v = paste
+  {
+    "key": "shift+cmd+c",
+    "command": "editor.action.clipboardCopyAction",
+    "when": "!terminalFocus",
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "workbench.action.terminal.copySelection",
+    "when": "terminalFocus && terminalTextSelected",
+  },
+  {
+    "key": "shift+cmd+v",
+    "command": "workbench.action.terminal.paste",
+    "when": "terminalFocus",
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  // ── Cmd → Ctrl (match Alacritty: Cmd sends control characters) ──
+  // Kept as-is: cmd+h/j/k/l (navigation), cmd+f (terminal find),
+  //   cmd+i/o (navigate fwd/back), cmd+p (quick open), cmd+q (quit),
+  //   cmd+s (save — Ctrl+S would freeze terminal), cmd+m (= Enter, redundant)
+  // cmd+a → Ctrl+A (beginning of line)            [shadows: select all in terminal]
+  {
+    "key": "cmd+a",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0001"
+    },
+    "when": "terminalFocus",
+  },
+  // cmd+b → Ctrl+B (back one character)           [shadows: toggle sidebar]
+  {
+    "key": "cmd+b",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0002"
+    },
+    "when": "terminalFocus",
+  },
+  // cmd+c → Ctrl+C (interrupt/SIGINT)             [shadows: terminal copy — use shift+cmd+c]
+  {
+    "key": "cmd+c",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0003"
+    },
+    "when": "terminalFocus",
+  },
+  // cmd+d → Ctrl+D (EOF / exit)
+  {
+    "key": "cmd+d",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0004"
+    },
+    "when": "terminalFocus",
+  },
+  // cmd+e → Ctrl+E (end of line)                  [shadows: open explorer]
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0005"
+    },
+    "when": "terminalFocus",
+  },
+  // cmd+g → Ctrl+G (abort)                        [shadows: go to line]
+  {
+    "key": "cmd+g",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0007"
+    },
+    "when": "terminalFocus",
+  },
+  // cmd+n → Ctrl+N (next history item)            [shadows: new file]
+  {
+    "key": "cmd+n",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u000e"
+    },
+    "when": "terminalFocus",
+  },
+  // cmd+r → Ctrl+R (reverse history search)
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0012"
+    },
+    "when": "terminalFocus",
+  },
+  // cmd+t → Ctrl+T (transpose characters)         [shadows: go to symbol]
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0014"
+    },
+    "when": "terminalFocus",
+  },
+  // cmd+u → Ctrl+U (kill line backward)
+  {
+    "key": "cmd+u",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0015"
+    },
+    "when": "terminalFocus",
+  },
+  // cmd+v → Ctrl+V (literal insert next char)     [shadows: paste — use shift+cmd+v]
+  {
+    "key": "cmd+v",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0016"
+    },
+    "when": "terminalFocus",
+  },
+  // cmd+w → Ctrl+W (delete word backward)         [shadows: close editor]
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0017"
+    },
+    "when": "terminalFocus",
+  },
+  // cmd+x → Ctrl+X (command prefix in emacs mode) [shadows: cut]
+  {
+    "key": "cmd+x",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0018"
+    },
+    "when": "terminalFocus",
+  },
+  // cmd+y → Ctrl+Y (yank / paste in readline)     [shadows: redo]
+  {
+    "key": "cmd+y",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0019"
+    },
+    "when": "terminalFocus",
+  },
+  // cmd+z → Ctrl+Z (suspend / background job)     [shadows: undo]
+  {
+    "key": "cmd+z",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u001a"
+    },
+    "when": "terminalFocus",
+  },
+  // ── Special key sequences (match Alacritty) ──
+  // shift+enter → ESC+Enter (multi-line editing in some shells)
+  {
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u001b\r"
+    },
+    "when": "terminalFocus",
+  },
+  // alt+right → forward word, alt+left → backward word
+  {
+    "key": "alt+right",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u001bf"
+    },
+    "when": "terminalFocus",
+  },
+  {
+    "key": "alt+left",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u001bb"
+    },
+    "when": "terminalFocus",
+  },
   // ╔══════════════════════════════════════════════════════════════╗
   // ║  File Open & History Navigation                            ║
   // ╚══════════════════════════════════════════════════════════════╝
@@ -399,25 +586,18 @@
   // ╔══════════════════════════════════════════════════════════════╗
   // ║  Copilot & Chat                                            ║
   // ╚══════════════════════════════════════════════════════════════╝
-  // cmd+space = open chat (in editor) / space menu (terminal) / focus editor (elsewhere)
+  // cmd+space = open chat (in editor) / Ctrl+Space (terminal) / focus editor (elsewhere)
   {
     "key": "cmd+space",
     "command": "workbench.action.chat.open",
     "when": "editorTextFocus",
   },
+  // cmd+space → Ctrl+Space (set-mark / tmux prefix)  [was: dance space menu]
   {
     "key": "cmd+space",
-    "command": "runCommands",
+    "command": "workbench.action.terminal.sendSequence",
     "args": {
-      "commands": [
-        "workbench.action.focusActiveEditorGroup",
-        {
-          "command": "dance.openMenu",
-          "args": {
-            "menu": "space"
-          },
-        },
-      ],
+      "text": "\u0000"
     },
     "when": "terminalFocus",
   },
@@ -1168,5 +1348,5 @@
     "key": "cmd+k cmd+i",
     "command": "-workbench.action.terminal.focusHover",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalIsOpen || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus",
-  },
+  }
 ]
