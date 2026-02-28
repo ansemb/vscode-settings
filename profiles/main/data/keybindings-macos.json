@@ -215,8 +215,28 @@
     "when": "inQuickOpen",
   },
   {
+    "key": "cmd+k",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen",
+  },
+  {
     "key": "tab",
     "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen",
+  },
+  {
+    "key": "shift+tab",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen",
+  },
+  {
+    "key": "down",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen",
+  },
+  {
+    "key": "up",
+    "command": "workbench.action.quickOpenNavigatePrevious",
     "when": "inQuickOpen",
   },
   // shift+; = insert previous suggestion (tab completion)
@@ -586,13 +606,18 @@
   // ╔══════════════════════════════════════════════════════════════╗
   // ║  Copilot & Chat                                            ║
   // ╚══════════════════════════════════════════════════════════════╝
-  // cmd+space = open chat (in editor) / Ctrl+Space (terminal) / focus editor (elsewhere)
+  // cmd+; = open chat (in editor) / focus editor (elsewhere)
   {
-    "key": "cmd+space",
+    "key": "cmd+;",
     "command": "workbench.action.chat.open",
     "when": "editorTextFocus",
   },
-  // cmd+space → Ctrl+Space (set-mark / tmux prefix)  [was: dance space menu]
+  {
+    "key": "cmd+;",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorTextFocus && !terminalFocus",
+  },
+  // cmd+space → Ctrl+Space (set-mark / tmux prefix) in terminal
   {
     "key": "cmd+space",
     "command": "workbench.action.terminal.sendSequence",
@@ -600,11 +625,6 @@
       "text": "\u0000"
     },
     "when": "terminalFocus",
-  },
-  {
-    "key": "cmd+space",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "!editorTextFocus && !terminalFocus",
   },
   // cmd+enter = submit chat (instead of enter)
   {
@@ -635,7 +655,7 @@
   // ╔══════════════════════════════════════════════════════════════╗
   // ║  Dance Mode (Kakoune-style editing)                        ║
   // ╚══════════════════════════════════════════════════════════════╝
-  // -- Command palette via shift+; (normal/visual) or cmd+; (outside editor) --
+  // -- Command palette via shift+; (normal/visual) or cmd+space (anywhere) --
   {
     "key": "shift+;",
     "command": "dance.openMenu",
@@ -648,17 +668,17 @@
     "key": "shift+;",
     "command": "dance.openMenu",
     "args": {
-      "menu": "command",
+      "menu": "space",
     },
     "when": "editorTextFocus && dance.mode == 'visual'",
   },
   {
-    "key": "cmd+;",
+    "key": "cmd+space",
     "command": "dance.openMenu",
     "args": {
-      "menu": "command",
+      "menu": "space",
     },
-    "when": "!editorTextFocus",
+    "when": "!terminalFocus",
   },
   // -- Find: / = open find dialog (replaces dance.search) --
   {
